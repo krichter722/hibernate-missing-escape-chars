@@ -1,0 +1,24 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--configure log files programmatically based on configuration options-->
+
+    <logger name="richtercloud" level="DEBUG"/>
+    <logger name="richtercloud.document.scanner.gui.DateFormatAutoOCRValueDetectionService" level="INFO"/><!--too much output-->
+    <logger name="richtercloud.document.scanner.gui.FormatUtils" level="INFO"/>
+    <logger name="richtercloud.reflection.form.builder.jpa.storage.AbstractPersistenceStorage" level="TRACE"/>
+    <logger name="richtercloud.reflection.form.builder.jpa.storage.PrioritizableReentrantLock" level="TRACE"/>
+    <logger name="richtercloud.document.scanner.ocr.CachedOCREngine" level="TRACE"/>
+        <!--for debugging locks-->
+    <logger name="richtercloud.reflection.form.builder.jpa.panels.StringAutoCompletePanel" level="TRACE"/>
+    <logger name="richtercloud.document.scanner.gui.scanresult.ScannerResultDialog" level="TRACE"/>
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
